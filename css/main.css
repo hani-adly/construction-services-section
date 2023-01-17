@@ -1,0 +1,112 @@
+* {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+body {
+    font-family:  'Poppins', sans-serif;;
+}
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 15px;
+}
+.cards {
+    display: flex;
+    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.cards .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.image {
+    background-image: url(../images/photo\ 2.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    color: #f8ffff;
+    position: relative;
+    counter-increment: services;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+.card::before {
+    position: absolute;
+    content: '0' counter(services);
+    font-size: 65px;
+    font-weight: bolder;
+    padding: 30px;
+}
+#one {
+    background: #2344a1;
+}
+#two {
+    background: #eadf25;
+    color: #0d1807;
+}
+#three {
+    background: #282c37;
+
+}
+#four {
+    background: #ff5001;
+}
+
+.card h5 {
+    padding: 70px 0px 0px 30px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0px 30px 25px 30px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgb(224, 220, 220)!important;
+    color: #0d1807;
+    box-shadow: 0px 0px 35px 0px rgba(37, 36, 36, 0.9);
+}
+/* responsive */
+@media (max-width:1200px) {
+    .cards .container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+}
+@media (max-width:950px) {
+    .cards .container {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+    .cards {
+        flex-basis: 100%;
+    }
+    .image {
+        flex-basis: 100%;
+        height: 500px;
+    }
+}
+@media (max-width:850px) {
+    .cards .container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+}
+@media (max-width:650px) {
+    .image {
+        height :300px;
+    }
+}
